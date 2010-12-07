@@ -137,7 +137,7 @@ $BINUTILS_VERSION = "2.20.1";
 $GNU_MIRROR="http://ftp.uni-kl.de";
 $BUILD_DIR="build";
 $GMP_VERSION="4.3.1";
-$MPFR_VERSION="2.4.1";
+$MPFR_VERSION="2.4.2";
 
 @GCC_VERSIONS = ( 
 				  {'ver' => '4.4.5', 'config' => '4.x'}, 
