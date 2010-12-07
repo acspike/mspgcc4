@@ -24,7 +24,7 @@ set -eu
 PKG_VERSION=7.0
 PKG_NAME=gdb	#can also be insight
 GNU_MIRROR=http://ftp.uni-kl.de
-INSIGHT_MIRROR=http://gd.tuwien.ac.at/gnu/sourceware/insight/releases/
+INSIGHT_MIRROR=http://ftp.gwdg.de/pub/linux/sources.redhat.com/insight/releases/
 BUILD_DIR=build
 INITIAL_DIR="$(pwd)"
 FETCH_ONLY=0
