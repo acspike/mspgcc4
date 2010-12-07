@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# This work is partially financed by the European Commission under the
+# This work has been partially financed by the European Commission under the
 # Framework 6 Information Society Technologies Project
 #  "Wirelessly Accessible Sensor Populations (WASP)".
 
