@@ -133,7 +133,7 @@ sub SystemCheck($$)
 
 #----------------------------------------------------------------------------------------------------------------------------------
 
-$BINUTILS_VERSION = "2.20.1";
+$BINUTILS_VERSION = "2.21";
 $GNU_MIRROR="http://ftp.uni-kl.de";
 $BUILD_DIR="build";
 $GMP_VERSION="4.3.1";
@@ -144,7 +144,7 @@ $MPFR_VERSION="2.4.2";
 				  {'ver' => '4.4.4', 'config' => '4.x'}, 
 				  );
 				  
-@LIBC_VERSIONS = ( 'ti_20101114', '20101113', '20101006', 'ti_20101006' );
+@LIBC_VERSIONS = ( 'ti_20110130', '20110130', 'ti_20101114', '20101113' );
 @GDB_VERSIONS = grep(/^gdb-(.*)\.patch/, split("\n", `ls -1 -r`));
 s/gdb-(.*)\.patch/$1/ foreach(@GDB_VERSIONS);
 @GDB_VERSIONS = sort{GNUVersionToInt($b) <=> GNUVersionToInt($a)}(@GDB_VERSIONS);

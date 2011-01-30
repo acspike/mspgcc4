@@ -1,3 +1,20 @@
+20110130
+ # Default binutils 2.21, gcc 4.4.5, gdb 7.2, msp430-libc 20110130-ti
+ - d2d1be3 Forward port the gdb-7.1 MSP430 patch to latest gdb-7.2 release
+ - d57603f Remove old [gdb] version
+ - f8c7f94 Patched header files in msp430-libc-ti_20101114 to support LLVM+clang.
+ - 58e32c0 Merge remote branch 'origin/ma/mirror-license-and-mpfr-tweaks' into next
+ - cf3d83a Add binutils 2.21 (primary supported) and some updates to 2.20.1
+ - 561be9a Switch Insight mirror to GWDG.de, TU Wien is too slow.
+ - 871ed12 Fetch MPFR from GNU mirror. mpfr.org is too unreliable.
+ - 18e10ed Bump default MPFR version to 2.4.2.
+ - 32e75be Revise EU acknowledgment now that the WASP project has completed (Oct 31st).
+ . 20868dc SF 3146404: Support for MSP430F550X chips (binutils 2.21, TI hdrs ONLY)
+ . b1e49a8 SF 3165301: Wrong interrupt vector base for MSP430_ISA_471
+ . b6c5a76 SF 3165291: Support for MSP430F471x3
+ . 0468ded SF 3154622: Adding (CORRECTING) support for MSP430F2132
+ . 8506408 SF 3112089: improper elimination of condition-code set
+
 20101114
  - c0e2dda SF 3109143: Support value-line MSP430G22x1 devices
  - cb66d77 Drop support for binutils 2.19.1
