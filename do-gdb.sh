@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# This work is partially financed by the European Commission under the
+# This work has been partially financed by the European Commission under the
 # Framework 6 Information Society Technologies Project
 #  "Wirelessly Accessible Sensor Populations (WASP)".
 
@@ -24,7 +24,7 @@ set -eu
 PKG_VERSION=7.0
 PKG_NAME=gdb	#can also be insight
 GNU_MIRROR=http://ftp.uni-kl.de
-INSIGHT_MIRROR=http://gd.tuwien.ac.at/gnu/sourceware/insight/releases/
+INSIGHT_MIRROR=http://ftp.gwdg.de/pub/linux/sources.redhat.com/insight/releases/
 BUILD_DIR=build
 INITIAL_DIR="$(pwd)"
 FETCH_ONLY=0

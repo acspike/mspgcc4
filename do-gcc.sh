@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# This work is partially financed by the European Commission under the
+# This work has been partially financed by the European Commission under the
 # Framework 6 Information Society Technologies Project
 #  "Wirelessly Accessible Sensor Populations (WASP)".
 
@@ -20,7 +20,7 @@ VERSION_TAG=$(cat _version_tag.txt)
 GCC_VERSION="4.3.4"
 GCC_PATCH_FOLDER="gcc-4.x"
 GMP_VERSION="4.3.1"
-MPFR_VERSION="2.4.1"
+MPFR_VERSION="2.4.2"
 GNU_MIRROR="http://ftp.uni-kl.de"
 BUILD_DIR="build"
 INITIAL_DIR="$(pwd)"
@@ -104,14 +104,9 @@ if [ $NO_FETCH != 1 ]; then
 
 	wget -c \
 		"$GNU_MIRROR/pub/gnu/gcc/gcc-$GCC_VERSION/gcc-core-$GCC_VERSION.tar.bz2" \
-		"$GNU_MIRROR/pub/gnu/gcc/gcc-$GCC_VERSION/gcc-g++-$GCC_VERSION.tar.bz2"\
-		"$GNU_MIRROR/pub/gnu/gmp/gmp-$GMP_VERSION.tar.bz2"
-
-	if [ x"$MPFR_VERSION" != x"-" ]; then
-		# server doesn't support continuing (-c), but timestamping.
-		# Let's use -N to avoid pointless re-downloading.
-		wget -N "http://www.mpfr.org/mpfr-$MPFR_VERSION/mpfr-$MPFR_VERSION.tar.bz2"
-	fi
+		"$GNU_MIRROR/pub/gnu/gcc/gcc-$GCC_VERSION/gcc-g++-$GCC_VERSION.tar.bz2" \
+		"$GNU_MIRROR/pub/gnu/gmp/gmp-$GMP_VERSION.tar.bz2" \
+		"$GNU_MIRROR/pub/gnu/mpfr/mpfr-$MPFR_VERSION.tar.bz2"
 fi
 
 if [ $FETCH_ONLY = 1 ]; then
