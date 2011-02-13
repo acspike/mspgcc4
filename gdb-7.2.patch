@@ -1,7 +1,15 @@
-diff --git gdb-7.2.orig+msp430bfd/archures.c gdb-7.2bfd/archures.c
+Copyright 2000-2011 Free Software Foundation, Inc.
+
+The material in this patch is a derivative work of the gdb package,
+and is subject to licensing and copyright of its parent package.
+
+This patch adds/enhances support for the Texas Instruments MSP430 family of
+microcontrollers to GNU gdb.
+
+diff --git gdb-7.2.orig+msp430/bfd/archures.c gdb-7.2/bfd/archures.c
 index 0e08571..fa47f55 100644
---- gdb-7.2.orig+msp430bfd/archures.c
-+++ gdb-7.2bfd/archures.c
+--- gdb-7.2.orig+msp430/bfd/archures.c
++++ gdb-7.2/bfd/archures.c
 @@ -403,7 +403,13 @@ DESCRIPTION
  .#define bfd_mach_msp14          14
  .#define bfd_mach_msp15          15
@@ -26,10 +34,10 @@ index 0e08571..fa47f55 100644
  .  bfd_arch_xc16x,     {* Infineon's XC16X Series.               *}
  .#define bfd_mach_xc16x         1
  .#define bfd_mach_xc16xl        2
-diff --git gdb-7.2.orig+msp430bfd/bfd-in2.h gdb-7.2bfd/bfd-in2.h
+diff --git gdb-7.2.orig+msp430/bfd/bfd-in2.h gdb-7.2/bfd/bfd-in2.h
 index f97c67f..21f282a 100644
---- gdb-7.2.orig+msp430bfd/bfd-in2.h
-+++ gdb-7.2bfd/bfd-in2.h
+--- gdb-7.2.orig+msp430/bfd/bfd-in2.h
++++ gdb-7.2/bfd/bfd-in2.h
 @@ -2069,7 +2069,13 @@ enum bfd_architecture
  #define bfd_mach_msp14          14
  #define bfd_mach_msp15          15
@@ -80,10 +88,10 @@ index f97c67f..21f282a 100644
  
  /* IQ2000 Relocations.  */
    BFD_RELOC_IQ2000_OFFSET_16,
-diff --git gdb-7.2.orig+msp430bfd/cpu-msp430.c gdb-7.2bfd/cpu-msp430.c
+diff --git gdb-7.2.orig+msp430/bfd/cpu-msp430.c gdb-7.2/bfd/cpu-msp430.c
 index 63c301a..88ed2ae 100644
---- gdb-7.2.orig+msp430bfd/cpu-msp430.c
-+++ gdb-7.2bfd/cpu-msp430.c
+--- gdb-7.2.orig+msp430/bfd/cpu-msp430.c
++++ gdb-7.2/bfd/cpu-msp430.c
 @@ -65,29 +65,56 @@ static const bfd_arch_info_type arch_info_struct[] =
    /* msp430x16x.  */
    N (16, bfd_mach_msp16, "msp:16", FALSE, & arch_info_struct[7]),
@@ -149,10 +157,10 @@ index 63c301a..88ed2ae 100644
  };
  
  const bfd_arch_info_type bfd_msp430_arch =
-diff --git gdb-7.2.orig+msp430bfd/elf32-msp430.c gdb-7.2bfd/elf32-msp430.c
+diff --git gdb-7.2.orig+msp430/bfd/elf32-msp430.c gdb-7.2/bfd/elf32-msp430.c
 index 285475c..837344e 100644
---- gdb-7.2.orig+msp430bfd/elf32-msp430.c
-+++ gdb-7.2bfd/elf32-msp430.c
+--- gdb-7.2.orig+msp430/bfd/elf32-msp430.c
++++ gdb-7.2/bfd/elf32-msp430.c
 @@ -90,7 +90,7 @@ static reloc_howto_type elf_msp430_howto_table[] =
  	 0xffff,		/* dst_mask */
  	 FALSE),		/* pcrel_offset */
@@ -842,10 +850,10 @@ index 285475c..837344e 100644
  	}
      }
  
-diff --git gdb-7.2.orig+msp430bfd/libbfd.h gdb-7.2bfd/libbfd.h
+diff --git gdb-7.2.orig+msp430/bfd/libbfd.h gdb-7.2/bfd/libbfd.h
 index 3da79d9..4ca4f00 100644
---- gdb-7.2.orig+msp430bfd/libbfd.h
-+++ gdb-7.2bfd/libbfd.h
+--- gdb-7.2.orig+msp430/bfd/libbfd.h
++++ gdb-7.2/bfd/libbfd.h
 @@ -2134,6 +2134,25 @@ static const char *const bfd_reloc_code_real_names[] = { "@@uninitialized@@",
    "BFD_RELOC_MSP430_16_BYTE",
    "BFD_RELOC_MSP430_2X_PCREL",
@@ -872,10 +880,10 @@ index 3da79d9..4ca4f00 100644
    "BFD_RELOC_IQ2000_OFFSET_16",
    "BFD_RELOC_IQ2000_OFFSET_21",
    "BFD_RELOC_IQ2000_UHI16",
-diff --git gdb-7.2.orig+msp430bfd/reloc.c gdb-7.2bfd/reloc.c
+diff --git gdb-7.2.orig+msp430/bfd/reloc.c gdb-7.2/bfd/reloc.c
 index 7d16869..d083467 100644
---- gdb-7.2.orig+msp430bfd/reloc.c
-+++ gdb-7.2bfd/reloc.c
+--- gdb-7.2.orig+msp430/bfd/reloc.c
++++ gdb-7.2/bfd/reloc.c
 @@ -5118,6 +5118,44 @@ ENUMX
    BFD_RELOC_MSP430_2X_PCREL
  ENUMX
@@ -921,10 +929,10 @@ index 7d16869..d083467 100644
  ENUMDOC
    msp430 specific relocation codes
  
-diff --git gdb-7.2.orig+msp430gdb/Makefile.in gdb-7.2gdb/Makefile.in
+diff --git gdb-7.2.orig+msp430/gdb/Makefile.in gdb-7.2/gdb/Makefile.in
 index f07bc8b..dd9aba8 100644
---- gdb-7.2.orig+msp430gdb/Makefile.in
-+++ gdb-7.2gdb/Makefile.in
+--- gdb-7.2.orig+msp430/gdb/Makefile.in
++++ gdb-7.2/gdb/Makefile.in
 @@ -1187,6 +1187,11 @@ libgdb.a: $(LIBGDB_OBS)
  	$(AR) q libgdb.a $(LIBGDB_OBS)
  	$(RANLIB) libgdb.a
@@ -937,10 +945,10 @@ index f07bc8b..dd9aba8 100644
  # This is useful when debugging GDB, because some Unix's don't let you run GDB
  # on itself without copying the executable.  So "make gdb1" will make
  # gdb and put a copy in gdb1, and you can run it with "gdb gdb1".
-diff --git gdb-7.2.orig+msp430gdb/configure.tgt gdb-7.2gdb/configure.tgt
+diff --git gdb-7.2.orig+msp430/gdb/configure.tgt gdb-7.2/gdb/configure.tgt
 index 97a532f..27dd17e 100644
---- gdb-7.2.orig+msp430gdb/configure.tgt
-+++ gdb-7.2gdb/configure.tgt
+--- gdb-7.2.orig+msp430/gdb/configure.tgt
++++ gdb-7.2/gdb/configure.tgt
 @@ -367,6 +367,13 @@ mn10300-*-*)
  	gdb_sim=../sim/mn10300/libsim.a
  	;;
@@ -955,10 +963,10 @@ index 97a532f..27dd17e 100644
  mt-*-*)
  	# Target: Morpho Technologies ms1 processor
  	gdb_target_obs="mt-tdep.o"
-diff --git gdb-7.2.orig+msp430include/elf/msp430.h gdb-7.2include/elf/msp430.h
+diff --git gdb-7.2.orig+msp430/include/elf/msp430.h gdb-7.2/include/elf/msp430.h
 index 44f5c51..31372c7 100644
---- gdb-7.2.orig+msp430include/elf/msp430.h
-+++ gdb-7.2include/elf/msp430.h
+--- gdb-7.2.orig+msp430/include/elf/msp430.h
++++ gdb-7.2/include/elf/msp430.h
 @@ -33,6 +33,13 @@
  #define E_MSP430_MACH_MSP430x14  14
  #define E_MSP430_MACH_MSP430x15  15
@@ -1009,10 +1017,10 @@ index 44f5c51..31372c7 100644
  
  END_RELOC_NUMBERS (R_MSP430_max)
  
-diff --git gdb-7.2.orig+msp430include/opcode/msp430.h gdb-7.2include/opcode/msp430.h
+diff --git gdb-7.2.orig+msp430/include/opcode/msp430.h gdb-7.2/include/opcode/msp430.h
 index d3bf130..60ec9d6 100644
---- gdb-7.2.orig+msp430include/opcode/msp430.h
-+++ gdb-7.2include/opcode/msp430.h
+--- gdb-7.2.orig+msp430/include/opcode/msp430.h
++++ gdb-7.2/include/opcode/msp430.h
 @@ -26,7 +26,7 @@ struct msp430_operand_s
    int ol;	/* Operand length words.  */
    int am;	/* Addr mode.  */
@@ -1338,10 +1346,10 @@ index d3bf130..60ec9d6 100644
    /* End of instruction set.  */
    { NULL, 0, 0, 0, 0 }
  };
-diff --git gdb-7.2.orig+msp430opcodes/msp430-dis.c gdb-7.2opcodes/msp430-dis.c
+diff --git gdb-7.2.orig+msp430/opcodes/msp430-dis.c gdb-7.2/opcodes/msp430-dis.c
 index 9d7edbe..6a568e8 100644
---- gdb-7.2.orig+msp430opcodes/msp430-dis.c
-+++ gdb-7.2opcodes/msp430-dis.c
+--- gdb-7.2.orig+msp430/opcodes/msp430-dis.c
++++ gdb-7.2/opcodes/msp430-dis.c
 @@ -52,12 +52,153 @@ msp430dis_opcode (bfd_vma addr, disassemble_info *info)
    return bfd_getl16 (buffer);
  }
@@ -2627,10 +2635,10 @@ index 9d7edbe..6a568e8 100644
 +    (*prin) (stream, "%s", comm2);
    return cmd_len;
  }
-diff --git gdb-7.2.orig+msp430sim/configure gdb-7.2sim/configure
+diff --git gdb-7.2.orig+msp430/sim/configure gdb-7.2/sim/configure
 index b6488e2..a6da49a 100755
---- gdb-7.2.orig+msp430sim/configure
-+++ gdb-7.2sim/configure
+--- gdb-7.2.orig+msp430/sim/configure
++++ gdb-7.2/sim/configure
 @@ -650,6 +650,7 @@ mcore
  microblaze
  mips
@@ -2653,10 +2661,10 @@ index b6488e2..a6da49a 100755
     sh64*-*-*)
  
    sim_arch=sh64
-diff --git gdb-7.2.orig+msp430sim/configure.tgt gdb-7.2sim/configure.tgt
+diff --git gdb-7.2.orig+msp430/sim/configure.tgt gdb-7.2/sim/configure.tgt
 index 592bc3c..80f3121 100644
---- gdb-7.2.orig+msp430sim/configure.tgt
-+++ gdb-7.2sim/configure.tgt
+--- gdb-7.2.orig+msp430/sim/configure.tgt
++++ gdb-7.2/sim/configure.tgt
 @@ -78,6 +78,10 @@ case "${target}" in
         SIM_ARCH(mn10300)
         sim_igen=yes
@@ -2668,10 +2676,10 @@ index 592bc3c..80f3121 100644
     moxie-*-*)
         SIM_ARCH(moxie)
         sim_testsuite=yes
-diff --git gdb-7.2.orig+msp430sim/msp430/interp.c gdb-7.2sim/msp430/interp.c
+diff --git gdb-7.2.orig+msp430/sim/msp430/interp.c gdb-7.2/sim/msp430/interp.c
 index c29a261..26332f2 100644
---- gdb-7.2.orig+msp430sim/msp430/interp.c
-+++ gdb-7.2sim/msp430/interp.c
+--- gdb-7.2.orig+msp430/sim/msp430/interp.c
++++ gdb-7.2/sim/msp430/interp.c
 @@ -1319,7 +1319,7 @@ int
  sim_write (sd, addr, buffer, size)
  SIM_DESC sd;
