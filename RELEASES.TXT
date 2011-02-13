@@ -1,3 +1,11 @@
+20110213
+ # Remove support for legacy msp430-libc: cannot correctly identify vector length
+ - 46a17af [ff251ef Avoid referencing subexpression unless it is needed (not present for CONST_INT)]
+ - 46a17af [c92f45e Correct interrupt vector base for ISA_24 chips]
+ - ebcff01 Remove outdated patch; add copyright header to patch for gdb 7.2
+ - 0efa452 Remove unsupported patches; use with mspgcc patch for binutils 2.21
+ - e9b2292 SF 3168920: Insight does not build with version 20110130
+
 20110130
  # Default binutils 2.21, gcc 4.4.5, gdb 7.2, msp430-libc 20110130-ti
  - d2d1be3 Forward port the gdb-7.1 MSP430 patch to latest gdb-7.2 release
