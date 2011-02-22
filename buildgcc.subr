@@ -28,7 +28,7 @@ num_cpus() {
 }
 
 find_gnumake() {
-	for i in gmake make ; do
+	for i in mingw32-make gmake make ; do
 		case "$($i --version 2>/dev/null | head -n1)" in
 			"GNU "[mM]ake*) echo $i ; return ;;
 		esac
