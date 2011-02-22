@@ -138,7 +138,7 @@ if [ x"$MPFR_VERSION" != x"-" ]; then
 	mv "mpfr-$MPFR_VERSION" mpfr
 	if [ $MINGW = 1 ]; then
 		echo "echo \"#!/bin/sh\" > libtool" >> mpfr/configure
-		echo "echo \"/bin/libtool \\\"\\\$@\\\"\" >> libtool" >> mpfr/configure
+		echo "echo \"/mingw/bin/libtool \\\"\\\$@\\\"\" >> libtool" >> mpfr/configure
 	fi
 fi
 
