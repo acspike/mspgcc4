@@ -34,10 +34,6 @@ esac
 
 WIN32_OPTS=
 
-if [ $MINGW = 1 ]; then
-	WIN32_OPTS=--enable-win32-registry=MSP430-GCC-$VERSION_TAG
-fi
-
 if [ $# = 0 ]; then
 	echo "Usage:   do-gcc.sh <toolchain target dir> [<gcc_version>] [<GNU mirror site>] [<build dir>] [<GCC patch folder>] [<GMP version>] [<MPFR version>] [--fetch-only/--no-fetch]"
 	echo "Example: do-gcc.sh /opt/msp430-gcc-latest $GCC_VERSION $GNU_MIRROR build $GCC_PATCH_FOLDER $GMP_VERSION $MPFR_VERSION"
