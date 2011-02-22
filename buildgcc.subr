@@ -18,6 +18,11 @@ num_cpus() {
 			tmp="$(grep ^processor /proc/cpuinfo 2>/dev/null| wc -l)"
 			if [ $tmp = 0 ] ; then tmp=1 ; fi
 			echo $tmp ;;
+		MINGW32_NT*)
+			tmp=1
+			if [ -n "${NUMBER_OF_PROCESSORS:+x}" ] ; then tmp=$NUMBER_OF_PROCESSORS ; fi
+			if [ $tmp = 0 ] ; then tmp=1 ; fi
+			echo $tmp ;;
 		*)	echo 1
 	esac
 }
